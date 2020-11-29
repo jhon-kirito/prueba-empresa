@@ -1,0 +1,50 @@
+body {
+    background-color: #0000ff;
+    font-family: Arial;
+}
+
+#datos {
+    margin: 50px auto;
+    width: 1000px;
+}
+
+#estilo {
+    margin: 50px auto;
+    width: 400px;
+}
+
+label {
+    text-align: center;
+    background-color: #246355;
+    color: white;
+    width: 30%;
+}
+
+table {
+    background-color: white;
+    text-align: left;
+    border-color: #59B5E7;
+    border-collapse: collapse;
+    width :100%;
+ 
+}
+
+th,
+td {
+    padding: 20px;
+}
+
+thead {
+    background-color: #246355;
+    border-bottom: solid 5px #0F362D;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:hover td {
+    background-color: #0000ff;
+    color: white;
+}
