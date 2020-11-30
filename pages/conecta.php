@@ -3,7 +3,7 @@
 $DB_HOST="localhost";
 $usuarios="root";
 $pasword="";
-$database="tickets";
+$database="ticket";
 
 
 $conexion=mysqli_connect($DB_HOST,$usuarios,$pasword,$database);

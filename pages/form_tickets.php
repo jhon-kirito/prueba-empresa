@@ -89,7 +89,11 @@ session_start();
 
       <li class="nav-item">
         <a class="nav-link" href="form_tickets.php">
-          <span>CREAR TICKETS</span></a>
+          <span>TICKET ASOCIADO</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="form_nuevo.php">
+          <span>CREAR TICKET</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="estado.php">
@@ -124,7 +128,7 @@ session_start();
           }
 
         ?>
-        <form class="" action="val_ticket.php" method="post">
+        <form class="" action="guardar.php" method="post">
 
 
    <?php
@@ -136,7 +140,7 @@ session_start();
    $nit=$fila['nit'];
  }
 
- $query = "SELECT nombre,id_emp FROM em_pro INNER JOIN proyecto ON em_pro.id_pr=proyecto.id_p
+ $query = "SELECT nombre1,id_emp FROM em_pro INNER JOIN proyecto ON em_pro.id_pr=proyecto.id_p
  where nit='$nit'";
  $resultado=mysqli_query($conexion,$query);
 ?>
@@ -148,7 +152,7 @@ session_start();
 <?php
     while($fila=mysqli_fetch_array($resultado,MYSQLI_ASSOC)){
        ?>
-        <option value="<?php echo $fila['id_emp']; ?>"><?php echo $fila['nombre']; ?></option>
+        <option value="<?php echo $fila['id_emp']; ?>"><?php echo $fila['nombre1']; ?></option>
     <?php }
      ?>
     </select>

@@ -1,4 +1,7 @@
+<?php
+session_start();
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+
 
 
   <!-- Custom fonts for this template-->
@@ -89,9 +93,64 @@
 
       <div class="container-fluid">
 
-        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script type="text/javascript">
+          $(document).ready(function() {
+            setTimeout(function() {
+              $(".content").fadeOut(2500);
+            },5000);
+          });
+        </script>
+
+        <?php
+
+          if(isset($_SESSION['error5']) || !empty($_SESSION['error5'])){
+            echo "<div class='content'><h4>".$_SESSION['error3']."</h4></div>";
+          }elseif(isset($_SESSION['aviso5']) || !empty($_SESSION['aviso5'])){
+            echo "<div class='content'><h4>".$_SESSION['aviso5']."</h4></div>";
+          }
+
+        ?>
+        <form class="" action="guardarnueva.php" method="post">
 
 
+   <?php
+   $id=$_SESSION['id'];
+  include 'conecta.php';
+ $query1 = "SELECT * FROM usuario_com where id_user='$id'";
+ $resultado1=mysqli_query($conexion,$query1);
+ while($fila=mysqli_fetch_array($resultado1,MYSQLI_ASSOC)){
+   $nit=$fila['nit'];
+ }
+
+ $query = "SELECT nombre1,id_emp FROM em_pro INNER JOIN proyecto ON em_pro.id_pr=proyecto.id_p
+ where nit='$nit'";
+ $resultado=mysqli_query($conexion,$query);
+?>
+
+       seleccionar proyecto
+       <br>
+         <select name="cbx_proyecto" id="cbx_proyecto" required="required" >
+               <option value="">Seleccione proyecto*</option>
+<?php
+    while($fila=mysqli_fetch_array($resultado,MYSQLI_ASSOC)){
+       ?>
+        <option value="<?php echo $fila['id_emp']; ?>"><?php echo $fila['nombre1']; ?></option>
+    <?php }
+     ?>
+    </select>
+<br>
+<br>
+        Descripcion historia de usuario
+        <br>
+        <textarea name='historia' rows='4' cols='80'></textarea><br>
+        <br>
+        comentarios de solicitud
+                             <br>
+      <textarea name='comentarios' rows='4' cols='80'></textarea><br>
+      <input class="btn btn-primary btn-block" type="submit" name="ok" value="SIGUIENTE" style="background-color:#00b300;">
+
+</form>
   <!-- Bootstrap core JavaScript-->
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

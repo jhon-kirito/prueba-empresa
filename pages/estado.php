@@ -1,15 +1,18 @@
+<?php
+session_start();
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
 
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
+   <link rel="stylesheet" href="../css/style3.css">
 
   <!-- Custom fonts for this template-->
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -24,10 +27,10 @@
 
 <body id="page-top">
 
+
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="">Usuario</a>
-
+    <a class="navbar-brand mr-1" href="index.html">Usuario</a>
 
 
     <!-- Navbar Search -->
@@ -39,12 +42,11 @@
       </div>
     </form>
 
-
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
       </li>
       <li class="nav-item dropdown no-arrow">
-        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="cerrar.php" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-user-circle fa-fw"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
@@ -62,35 +64,46 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
 
+            <li class="nav-item">
+              <a class="nav-link" href="form_tickets.php">
+                <span>TICKET ASOCIADO</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="form_nuevo.php">
+                <span>CREAR TICKET</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="estado.php">
+                <span>ESTADO TICKETS</span></a>
+            </li>
 
+            <li class="nav-item">
+              <a class="nav-link" href="cerrar.php">
+                <span>CERRAR SESIÓN</span></a>
+            </li>
+    </ul>
 
-
-
-      <li class="nav-item">
-        <a class="nav-link" href="form_tickets.php">
-          <span>TICKET ASOCIADO</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="form_nuevo.php">
-          <span>CREAR TICKET</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="estado.php">
-          <span>ESTADO TICKETS</span></a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="cerrar.php">
-          <span>CERRAR SESIÓN</span></a>
-      </li>
-
-  </ul>
-    <div id="content-wrapper">
+    <div id="content-wrapper2">
 
       <div class="container-fluid">
 
-        </div>
 
+        <section class="principal">
+      		<div class="form" id="estilo">
+      			<label for="caja_busqueda" >BUSCAR</label>
+      			<input type="text" name="caja_busqueda" id="caja_busqueda" value="">
+
+      		</div>
+
+      		<div id="datos">
+
+      		</div>
+      	</section>
+      	<script src="../js/jquery-3.4.1.min.js"></script>
+      	<script src="../js/main.js"></script>
+      </body>
+
+        </div>
 
   <!-- Bootstrap core JavaScript-->
   <script src="../vendor/jquery/jquery.min.js"></script>
@@ -102,7 +115,7 @@
   <!-- Page level plugin JavaScript-->
   <script src="../vendor/chart.js/Chart.min.js"></script>
   <script src="../vendor/datatables/jquery.dataTables.js"></script>
-  <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
 
   <!-- Custom scripts for all pages-->
   <script src="../js/sb-admin.min.js"></script>

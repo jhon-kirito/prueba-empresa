@@ -1,4 +1,8 @@
-
+<?php
+session_start();
+@$ok=$_GET['id'];
+$_SESSION['yeah']=$ok;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
+   <link rel="stylesheet" href="../css/style3.css">
 
   <!-- Custom fonts for this template-->
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,8 +30,7 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="">Usuario</a>
-
+    <a class="navbar-brand mr-1" href="index.html">PROSINTE ADMINISTRADOR</a>
 
 
     <!-- Navbar Search -->
@@ -39,12 +42,11 @@
       </div>
     </form>
 
-
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
       </li>
       <li class="nav-item dropdown no-arrow">
-        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="cerrar.php" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-user-circle fa-fw"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
@@ -61,11 +63,6 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-
-
-
-
-
       <li class="nav-item">
         <a class="nav-link" href="form_tickets.php">
           <span>TICKET ASOCIADO</span></a>
@@ -83,11 +80,24 @@
         <a class="nav-link" href="cerrar.php">
           <span>CERRAR SESIÓN</span></a>
       </li>
+    </ul>
 
-  </ul>
-    <div id="content-wrapper">
+
+    <div id="content-wrapper2">
 
       <div class="container-fluid">
+
+
+        <section class="principal">
+
+
+      		<div id="datos">
+
+      		</div>
+      	</section>
+      	<script src="../js/jquery-3.4.1.min.js"></script>
+      	<script src="../js/mainestado.js"></script>
+      </body>
 
         </div>
 
@@ -102,7 +112,7 @@
   <!-- Page level plugin JavaScript-->
   <script src="../vendor/chart.js/Chart.min.js"></script>
   <script src="../vendor/datatables/jquery.dataTables.js"></script>
-  <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
 
   <!-- Custom scripts for all pages-->
   <script src="../js/sb-admin.min.js"></script>
